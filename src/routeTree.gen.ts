@@ -9,9 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PatientRouteImport } from './routes/patient'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PatientIndexRouteImport } from './routes/patient.index'
+import { Route as PatientTreatmentRouteImport } from './routes/patient.treatment'
+import { Route as PatientTelehealthRouteImport } from './routes/patient.telehealth'
+import { Route as PatientProgressRouteImport } from './routes/patient.progress'
+import { Route as PatientPaymentsRouteImport } from './routes/patient.payments'
+import { Route as PatientMessagesRouteImport } from './routes/patient.messages'
+import { Route as PatientExercisesRouteImport } from './routes/patient.exercises'
+import { Route as PatientBookRouteImport } from './routes/patient.book'
+import { Route as PatientAppointmentsRouteImport } from './routes/patient.appointments'
 
+const PatientRoute = PatientRouteImport.update({
+  id: '/patient',
+  path: '/patient',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -22,35 +37,153 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PatientIndexRoute = PatientIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientTreatmentRoute = PatientTreatmentRouteImport.update({
+  id: '/treatment',
+  path: '/treatment',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientTelehealthRoute = PatientTelehealthRouteImport.update({
+  id: '/telehealth',
+  path: '/telehealth',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientProgressRoute = PatientProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientPaymentsRoute = PatientPaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientMessagesRoute = PatientMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientExercisesRoute = PatientExercisesRouteImport.update({
+  id: '/exercises',
+  path: '/exercises',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientBookRoute = PatientBookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => PatientRoute,
+} as any)
+const PatientAppointmentsRoute = PatientAppointmentsRouteImport.update({
+  id: '/appointments',
+  path: '/appointments',
+  getParentRoute: () => PatientRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/patient': typeof PatientRouteWithChildren
+  '/patient/appointments': typeof PatientAppointmentsRoute
+  '/patient/book': typeof PatientBookRoute
+  '/patient/exercises': typeof PatientExercisesRoute
+  '/patient/messages': typeof PatientMessagesRoute
+  '/patient/payments': typeof PatientPaymentsRoute
+  '/patient/progress': typeof PatientProgressRoute
+  '/patient/telehealth': typeof PatientTelehealthRoute
+  '/patient/treatment': typeof PatientTreatmentRoute
+  '/patient/': typeof PatientIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/patient/appointments': typeof PatientAppointmentsRoute
+  '/patient/book': typeof PatientBookRoute
+  '/patient/exercises': typeof PatientExercisesRoute
+  '/patient/messages': typeof PatientMessagesRoute
+  '/patient/payments': typeof PatientPaymentsRoute
+  '/patient/progress': typeof PatientProgressRoute
+  '/patient/telehealth': typeof PatientTelehealthRoute
+  '/patient/treatment': typeof PatientTreatmentRoute
+  '/patient': typeof PatientIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/patient': typeof PatientRouteWithChildren
+  '/patient/appointments': typeof PatientAppointmentsRoute
+  '/patient/book': typeof PatientBookRoute
+  '/patient/exercises': typeof PatientExercisesRoute
+  '/patient/messages': typeof PatientMessagesRoute
+  '/patient/payments': typeof PatientPaymentsRoute
+  '/patient/progress': typeof PatientProgressRoute
+  '/patient/telehealth': typeof PatientTelehealthRoute
+  '/patient/treatment': typeof PatientTreatmentRoute
+  '/patient/': typeof PatientIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login'
+  fullPaths:
+    | '/'
+    | '/login'
+    | '/patient'
+    | '/patient/appointments'
+    | '/patient/book'
+    | '/patient/exercises'
+    | '/patient/messages'
+    | '/patient/payments'
+    | '/patient/progress'
+    | '/patient/telehealth'
+    | '/patient/treatment'
+    | '/patient/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login'
-  id: '__root__' | '/' | '/login'
+  to:
+    | '/'
+    | '/login'
+    | '/patient/appointments'
+    | '/patient/book'
+    | '/patient/exercises'
+    | '/patient/messages'
+    | '/patient/payments'
+    | '/patient/progress'
+    | '/patient/telehealth'
+    | '/patient/treatment'
+    | '/patient'
+  id:
+    | '__root__'
+    | '/'
+    | '/login'
+    | '/patient'
+    | '/patient/appointments'
+    | '/patient/book'
+    | '/patient/exercises'
+    | '/patient/messages'
+    | '/patient/payments'
+    | '/patient/progress'
+    | '/patient/telehealth'
+    | '/patient/treatment'
+    | '/patient/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginRoute: typeof LoginRoute
+  PatientRoute: typeof PatientRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/patient': {
+      id: '/patient'
+      path: '/patient'
+      fullPath: '/patient'
+      preLoaderRoute: typeof PatientRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -65,12 +198,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/patient/': {
+      id: '/patient/'
+      path: '/'
+      fullPath: '/patient/'
+      preLoaderRoute: typeof PatientIndexRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/treatment': {
+      id: '/patient/treatment'
+      path: '/treatment'
+      fullPath: '/patient/treatment'
+      preLoaderRoute: typeof PatientTreatmentRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/telehealth': {
+      id: '/patient/telehealth'
+      path: '/telehealth'
+      fullPath: '/patient/telehealth'
+      preLoaderRoute: typeof PatientTelehealthRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/progress': {
+      id: '/patient/progress'
+      path: '/progress'
+      fullPath: '/patient/progress'
+      preLoaderRoute: typeof PatientProgressRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/payments': {
+      id: '/patient/payments'
+      path: '/payments'
+      fullPath: '/patient/payments'
+      preLoaderRoute: typeof PatientPaymentsRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/messages': {
+      id: '/patient/messages'
+      path: '/messages'
+      fullPath: '/patient/messages'
+      preLoaderRoute: typeof PatientMessagesRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/exercises': {
+      id: '/patient/exercises'
+      path: '/exercises'
+      fullPath: '/patient/exercises'
+      preLoaderRoute: typeof PatientExercisesRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/book': {
+      id: '/patient/book'
+      path: '/book'
+      fullPath: '/patient/book'
+      preLoaderRoute: typeof PatientBookRouteImport
+      parentRoute: typeof PatientRoute
+    }
+    '/patient/appointments': {
+      id: '/patient/appointments'
+      path: '/appointments'
+      fullPath: '/patient/appointments'
+      preLoaderRoute: typeof PatientAppointmentsRouteImport
+      parentRoute: typeof PatientRoute
+    }
   }
 }
+
+interface PatientRouteChildren {
+  PatientAppointmentsRoute: typeof PatientAppointmentsRoute
+  PatientBookRoute: typeof PatientBookRoute
+  PatientExercisesRoute: typeof PatientExercisesRoute
+  PatientMessagesRoute: typeof PatientMessagesRoute
+  PatientPaymentsRoute: typeof PatientPaymentsRoute
+  PatientProgressRoute: typeof PatientProgressRoute
+  PatientTelehealthRoute: typeof PatientTelehealthRoute
+  PatientTreatmentRoute: typeof PatientTreatmentRoute
+  PatientIndexRoute: typeof PatientIndexRoute
+}
+
+const PatientRouteChildren: PatientRouteChildren = {
+  PatientAppointmentsRoute: PatientAppointmentsRoute,
+  PatientBookRoute: PatientBookRoute,
+  PatientExercisesRoute: PatientExercisesRoute,
+  PatientMessagesRoute: PatientMessagesRoute,
+  PatientPaymentsRoute: PatientPaymentsRoute,
+  PatientProgressRoute: PatientProgressRoute,
+  PatientTelehealthRoute: PatientTelehealthRoute,
+  PatientTreatmentRoute: PatientTreatmentRoute,
+  PatientIndexRoute: PatientIndexRoute,
+}
+
+const PatientRouteWithChildren =
+  PatientRoute._addFileChildren(PatientRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginRoute: LoginRoute,
+  PatientRoute: PatientRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
