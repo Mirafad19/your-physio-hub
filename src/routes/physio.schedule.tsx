@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Fragment } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { appointments } from "@/lib/mock-data";
@@ -30,8 +31,8 @@ function Schedule() {
             <div key={d} className="border-b border-r border-border bg-muted/40 p-3 text-center text-xs font-medium uppercase tracking-wider text-muted-foreground last:border-r-0">{d}</div>
           ))}
           {hours.map((h) => (
-            <>
-              <div key={`h-${h}`} className="border-b border-r border-border p-2 text-xs text-muted-foreground">{h}</div>
+            <Fragment key={h}>
+              <div className="border-b border-r border-border p-2 text-xs text-muted-foreground">{h}</div>
               {days.map((d) => {
                 const slot = placed[d]?.find((s) => s.time.startsWith(h.slice(0, 2)));
                 return (
@@ -45,7 +46,7 @@ function Schedule() {
                   </div>
                 );
               })}
-            </>
+            </Fragment>
           ))}
         </div>
       </Card>
