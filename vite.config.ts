@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Vercel builds run outside Lovable, so force the server adapter on there.
+  // Without this, Vercel finishes `vite build` but no `.vercel/output` folder is generated.
+  nitro: {
+    preset: "vercel",
+  },
 });
