@@ -23,9 +23,9 @@ export const currentPatient = {
 };
 
 export const physiotherapist = {
-  name: "Dr. Tunde Bakare, MPT",
+  name: "Dr. Kola Fadahunsi, MPT",
   specialty: "Musculoskeletal & Post-Surgical Rehab",
-  clinic: "Kinetix Lagos — Lekki Phase 1",
+  clinic: "GTD Clinic — Lagos — Lekki Phase 1",
   rating: 4.9,
   reviews: 312,
 };
@@ -69,9 +69,9 @@ export const painTrend = [
 ];
 
 export const messages = [
-  { from: "Dr. Tunde Bakare", time: "Today, 09:14", text: "Morning Adaeze — how did the bird-dog feel yesterday? Any flare overnight?", own: false },
+  { from: "Dr. Kola Fadahunsi", time: "Today, 09:14", text: "Morning Adaeze — how did the bird-dog feel yesterday? Any flare overnight?", own: false },
   { from: "You", time: "Today, 09:31", text: "Morning Doc. Slept much better — pain was about 3/10 on waking.", own: true },
-  { from: "Dr. Tunde Bakare", time: "Today, 09:33", text: "Excellent. Let's progress to 3×10 and add side-plank knee taps. I'll update the plan now.", own: false },
+  { from: "Dr. Kola Fadahunsi", time: "Today, 09:33", text: "Excellent. Let's progress to 3×10 and add side-plank knee taps. I'll update the plan now.", own: false },
 ];
 
 export const payments = [

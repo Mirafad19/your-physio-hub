@@ -3,17 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Activity, CalendarCheck, MessageSquare, Video, LineChart, ShieldCheck,
-  ArrowRight, Dumbbell, FileText, CreditCard, Stethoscope, UsersRound, Sparkles,
+  CalendarCheck, Video, LineChart, ShieldCheck, ArrowRight,
+  Dumbbell, MessageSquare, Sparkles, CheckCircle2, Quote,
 } from "lucide-react";
+import { SiteHeader, SiteFooter } from "@/components/site-header";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kinetix — Physiotherapy & Telehealth in Lagos" },
-      { name: "description", content: "Modern physiotherapy care for Lagos and beyond. Book consultations, follow guided exercise plans, message your physio and track recovery — all in one place." },
-      { property: "og:title", content: "Kinetix — Physiotherapy & Telehealth in Lagos" },
-      { property: "og:description", content: "Modern physiotherapy care for Lagos and beyond. Book consultations, follow guided exercise plans, message your physio and track recovery — all in one place." },
+      { title: "GTD Clinic — Gilead Digital Therapy Clinic, Lagos" },
+      { name: "description", content: "Expert physiotherapy in Lagos and online across Nigeria. Book a consultation with Dr. Kola Fadahunsi, follow guided exercise plans and recover faster — all in one secure portal." },
+      { property: "og:title", content: "GTD Clinic — Gilead Digital Therapy Clinic" },
+      { property: "og:description", content: "Expert physiotherapy in Lagos and online across Nigeria." },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Landing,
@@ -21,44 +23,17 @@ export const Route = createFileRoute("/")({
 
 const features = [
   { icon: CalendarCheck, title: "Effortless booking", body: "Pick a session type, see live availability and confirm in under a minute." },
-  { icon: Video, title: "HD telehealth", body: "Secure video consultations with screen sharing and session notes saved automatically." },
+  { icon: Video, title: "HD telehealth", body: "Secure video consultations from anywhere in Nigeria — notes saved automatically." },
   { icon: Dumbbell, title: "Guided exercise plans", body: "Demonstration videos, sets and reps prescribed and tracked weekly." },
-  { icon: LineChart, title: "Recovery tracking", body: "Pain, function and compliance charts so progress is always visible." },
+  { icon: LineChart, title: "Recovery tracking", body: "Pain, function and compliance charts so your progress is always visible." },
   { icon: MessageSquare, title: "Direct messaging", body: "Ask questions, share photos and get adjustments between sessions." },
-  { icon: ShieldCheck, title: "Private by design", body: "End-to-end encrypted records — accessible only to you and your physio." },
-];
-
-const steps = [
-  { n: "01", title: "Register", body: "Tell us about your history and current symptoms." },
-  { n: "02", title: "Book a session", body: "Choose initial consult, follow-up, exercise review or post-op rehab." },
-  { n: "03", title: "Pay securely", body: "Card, transfer, USSD or international cards — all in Naira." },
-  { n: "04", title: "Start recovering", body: "Join the call, follow your plan and message your physio anytime." },
+  { icon: ShieldCheck, title: "Private by design", body: "Encrypted records — accessible only to you and your clinician." },
 ];
 
 function Landing() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Nav */}
-      <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Activity className="h-4 w-4" />
-            </div>
-            <span className="font-display text-lg font-semibold tracking-tight">Kinetix</span>
-          </Link>
-          <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#features" className="hover:text-foreground">Platform</a>
-            <a href="#how" className="hover:text-foreground">How it works</a>
-            <a href="#roles" className="hover:text-foreground">For clinicians</a>
-            <a href="#pricing" className="hover:text-foreground">Pricing</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button asChild variant="ghost" size="sm"><Link to="/login">Sign in</Link></Button>
-            <Button asChild size="sm"><Link to="/login">Get started</Link></Button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
@@ -66,27 +41,27 @@ function Landing() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_1fr] md:py-28">
           <div className="flex flex-col justify-center">
             <Badge variant="secondary" className="w-fit gap-1.5 rounded-full px-3 py-1">
-              <Sparkles className="h-3 w-3" /> New: telehealth across Nigeria
+              <Sparkles className="h-3 w-3" /> Telehealth across Nigeria
             </Badge>
             <h1 className="mt-5 font-display text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl">
               Physiotherapy that follows you,<br />
               <span className="text-primary">not the other way around.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-              Kinetix connects patients in Lagos and beyond with expert physiotherapists. Book consultations, follow guided exercise plans and message your clinician — all from one secure portal.
+              Gilead Digital Therapy Clinic combines in-person care in Lagos with secure telehealth — so your recovery never has to wait for traffic, distance or schedule.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full px-6">
-                <Link to="/login">Book your first session <ArrowRight className="ml-1 h-4 w-4" /></Link>
+                <Link to="/login">Book a consultation <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-6">
-                <Link to="/login">I'm a clinician</Link>
+                <Link to="/how-it-works">How it works</Link>
               </Button>
             </div>
-            <div className="mt-10 flex items-center gap-8 text-sm text-muted-foreground">
+            <div className="mt-10 flex items-center gap-10 text-sm text-muted-foreground">
               <div><div className="font-display text-2xl text-foreground">1,200+</div>patients treated</div>
               <div><div className="font-display text-2xl text-foreground">4.9★</div>average rating</div>
-              <div><div className="font-display text-2xl text-foreground">36</div>physiotherapists</div>
+              <div><div className="font-display text-2xl text-foreground">10+ yrs</div>clinical experience</div>
             </div>
           </div>
 
@@ -107,7 +82,7 @@ function Landing() {
               </div>
               <div className="rounded-lg border border-border bg-muted/40 p-3">
                 <p className="text-muted-foreground">Clinician</p>
-                <p className="font-display text-lg">Dr. Bakare</p>
+                <p className="font-display text-lg">Dr. Fadahunsi</p>
               </div>
             </div>
             <div className="mt-6 space-y-3">
@@ -131,11 +106,11 @@ function Landing() {
       </section>
 
       {/* Features */}
-      <section id="features" className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary">Everything in one portal</p>
           <h2 className="mt-2 font-display text-4xl tracking-tight">Built around the patient journey.</h2>
-          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, Kinetix keeps every detail organised and every party informed.</p>
+          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, GTD Clinic keeps every detail organised and every party informed.</p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
@@ -150,80 +125,83 @@ function Landing() {
         </div>
       </section>
 
-      {/* How */}
-      <section id="how" className="border-y border-border bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-4xl tracking-tight">Care in four steps.</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-4">
-            {steps.map((s) => (
-              <div key={s.n} className="relative">
-                <span className="font-display text-5xl text-primary/30">{s.n}</span>
-                <h3 className="mt-2 font-display text-lg">{s.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
+      {/* Doctor spotlight */}
+      <section className="border-y border-border bg-muted/30 py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_1.4fr] md:items-center">
+          <Card className="overflow-hidden border-border/60 p-8 shadow-card">
+            <div className="flex items-center gap-4">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 font-display text-2xl text-primary">KF</div>
+              <div>
+                <p className="font-display text-xl">Dr. Kola Fadahunsi</p>
+                <p className="text-sm text-muted-foreground">MPT · Lead Physiotherapist</p>
               </div>
-            ))}
+            </div>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              "My goal is simple — get you moving without pain, and give you the tools to stay that way. Whether we meet in clinic or on a video call, you'll always know exactly what we're working on and why."
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2 text-xs text-muted-foreground">
+              <Badge variant="outline" className="rounded-full">Musculoskeletal</Badge>
+              <Badge variant="outline" className="rounded-full">Post-surgical rehab</Badge>
+              <Badge variant="outline" className="rounded-full">Sports injury</Badge>
+            </div>
+          </Card>
+          <div>
+            <h2 className="font-display text-4xl tracking-tight">A clinician who listens, a plan that adapts.</h2>
+            <p className="mt-4 text-muted-foreground">Every patient at GTD Clinic begins with a thorough assessment — history, movement screen, and goals. From there we co-design a recovery plan that fits your life, not the other way around.</p>
+            <ul className="mt-6 space-y-3 text-sm">
+              {[
+                "Comprehensive musculoskeletal assessment",
+                "Hands-on therapy and modern manual techniques",
+                "Personalised home exercise programme with video guides",
+                "Ongoing messaging support between sessions",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> {t}
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="mt-8 rounded-full px-6">
+              <Link to="/login">Start your assessment <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Roles */}
-      <section id="roles" className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-3">
+      {/* Testimonials */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="font-display text-4xl tracking-tight">What our patients say.</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
-            { icon: UsersRound, title: "For patients", body: "Book, pay, follow your plan and message your physio.", to: "/patient" },
-            { icon: Stethoscope, title: "For physiotherapists", body: "Manage caseload, prescribe exercises and run telehealth.", to: "/physio" },
-            { icon: FileText, title: "For administrators", body: "Oversee revenue, bookings and platform health.", to: "/admin" },
-          ].map((r) => (
-            <Card key={r.title} className="group border-border/60 p-6 shadow-card transition hover:-translate-y-0.5 hover:shadow-elevated">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <r.icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-xl">{r.title}</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">{r.body}</p>
-              <Link to={r.to} className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                Open portal <ArrowRight className="h-4 w-4" />
-              </Link>
+            { quote: "Six weeks of back pain — gone in a month. The exercise videos kept me consistent.", who: "Adaeze O., Lagos" },
+            { quote: "Telehealth was a lifesaver during the rains. Felt like Dr. Fadahunsi was in the room with me.", who: "Emeka A., Abuja" },
+            { quote: "Post-ACL recovery on track ahead of schedule. The progress tracking is brilliant.", who: "Fatima Y., Lagos" },
+          ].map((t) => (
+            <Card key={t.who} className="border-border/60 p-6 shadow-card">
+              <Quote className="h-5 w-5 text-primary/40" />
+              <p className="mt-3 text-sm leading-relaxed">{t.quote}</p>
+              <p className="mt-4 text-xs uppercase tracking-wider text-muted-foreground">{t.who}</p>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* Pricing strip */}
-      <section id="pricing" className="border-y border-border bg-primary/5 py-16">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 md:flex-row">
-          <div>
-            <h2 className="font-display text-3xl">Transparent Naira pricing.</h2>
-            <p className="mt-2 text-muted-foreground">Initial consult ₦25,000 · Follow-up ₦15,000 · Exercise review ₦12,000 · Post-op rehab ₦22,000</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <Badge variant="outline" className="rounded-full"><CreditCard className="mr-1.5 h-3 w-3" /> Card</Badge>
-            <Badge variant="outline" className="rounded-full">Bank transfer</Badge>
-            <Badge variant="outline" className="rounded-full">USSD</Badge>
-            <Badge variant="outline" className="rounded-full">Visa / Mastercard</Badge>
-            <Badge variant="outline" className="rounded-full">PayPal</Badge>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <h2 className="font-display text-5xl tracking-tight">Recovery, on your schedule.</h2>
-        <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Join Kinetix and put a full physiotherapy clinic in your pocket — wherever you are in Nigeria.</p>
-        <Button asChild size="lg" className="mt-8 rounded-full px-8">
-          <Link to="/login">Create your account <ArrowRight className="ml-1 h-4 w-4" /></Link>
-        </Button>
-      </section>
-
-      <footer className="border-t border-border py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
-          <p>© 2026 Kinetix Health, Lagos.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">Contact</a>
+      <section className="border-t border-border bg-primary/5">
+        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
+          <h2 className="font-display text-5xl tracking-tight">Recovery, on your schedule.</h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">Speak with Dr. Kola Fadahunsi about your symptoms and goals — in clinic or online.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button asChild size="lg" className="rounded-full px-8">
+              <Link to="/login">Book a consultation <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
+              <Link to="/contact">Contact the clinic</Link>
+            </Button>
           </div>
         </div>
-      </footer>
+      </section>
+
+      <SiteFooter />
     </div>
   );
 }

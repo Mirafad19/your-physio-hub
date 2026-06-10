@@ -32,7 +32,7 @@ function TelehealthPage() {
                 <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
                   <span className="font-display text-3xl">TB</span>
                 </div>
-                <p className="mt-3 font-display text-xl">Dr. Tunde Bakare</p>
+                <p className="mt-3 font-display text-xl">Dr. Kola Fadahunsi</p>
                 <p className="text-xs text-white/60">HD · End-to-end encrypted</p>
               </div>
             </div>
