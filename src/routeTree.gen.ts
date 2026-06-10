@@ -9,10 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PlatformRouteImport } from './routes/platform'
 import { Route as PhysioRouteImport } from './routes/physio'
 import { Route as PatientRouteImport } from './routes/patient'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CliniciansRouteImport } from './routes/clinicians'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PhysioIndexRouteImport } from './routes/physio.index'
 import { Route as PatientIndexRouteImport } from './routes/patient.index'
@@ -36,6 +41,11 @@ import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminFinanceRouteImport } from './routes/admin.finance'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
 
+const PlatformRoute = PlatformRouteImport.update({
+  id: '/platform',
+  path: '/platform',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PhysioRoute = PhysioRouteImport.update({
   id: '/physio',
   path: '/physio',
@@ -51,9 +61,29 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CliniciansRoute = CliniciansRouteImport.update({
+  id: '/clinicians',
+  path: '/clinicians',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -169,10 +199,15 @@ const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
+  '/clinicians': typeof CliniciansRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
   '/patient': typeof PatientRouteWithChildren
   '/physio': typeof PhysioRouteWithChildren
+  '/platform': typeof PlatformRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/finance': typeof AdminFinanceRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -197,7 +232,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/clinicians': typeof CliniciansRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
+  '/platform': typeof PlatformRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/finance': typeof AdminFinanceRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -223,10 +263,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/admin': typeof AdminRouteWithChildren
+  '/clinicians': typeof CliniciansRoute
+  '/contact': typeof ContactRoute
+  '/how-it-works': typeof HowItWorksRoute
   '/login': typeof LoginRoute
   '/patient': typeof PatientRouteWithChildren
   '/physio': typeof PhysioRouteWithChildren
+  '/platform': typeof PlatformRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/finance': typeof AdminFinanceRoute
   '/admin/settings': typeof AdminSettingsRoute
@@ -253,10 +298,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/admin'
+    | '/clinicians'
+    | '/contact'
+    | '/how-it-works'
     | '/login'
     | '/patient'
     | '/physio'
+    | '/platform'
     | '/admin/analytics'
     | '/admin/finance'
     | '/admin/settings'
@@ -281,7 +331,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/clinicians'
+    | '/contact'
+    | '/how-it-works'
     | '/login'
+    | '/platform'
     | '/admin/analytics'
     | '/admin/finance'
     | '/admin/settings'
@@ -306,10 +361,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/admin'
+    | '/clinicians'
+    | '/contact'
+    | '/how-it-works'
     | '/login'
     | '/patient'
     | '/physio'
+    | '/platform'
     | '/admin/analytics'
     | '/admin/finance'
     | '/admin/settings'
@@ -335,14 +395,26 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRouteWithChildren
+  CliniciansRoute: typeof CliniciansRoute
+  ContactRoute: typeof ContactRoute
+  HowItWorksRoute: typeof HowItWorksRoute
   LoginRoute: typeof LoginRoute
   PatientRoute: typeof PatientRouteWithChildren
   PhysioRoute: typeof PhysioRouteWithChildren
+  PlatformRoute: typeof PlatformRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/platform': {
+      id: '/platform'
+      path: '/platform'
+      fullPath: '/platform'
+      preLoaderRoute: typeof PlatformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/physio': {
       id: '/physio'
       path: '/physio'
@@ -364,11 +436,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clinicians': {
+      id: '/clinicians'
+      path: '/clinicians'
+      fullPath: '/clinicians'
+      preLoaderRoute: typeof CliniciansRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin': {
       id: '/admin'
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -598,10 +698,15 @@ const PhysioRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AdminRoute: AdminRouteWithChildren,
+  CliniciansRoute: CliniciansRoute,
+  ContactRoute: ContactRoute,
+  HowItWorksRoute: HowItWorksRoute,
   LoginRoute: LoginRoute,
   PatientRoute: PatientRouteWithChildren,
   PhysioRoute: PhysioRouteWithChildren,
+  PlatformRoute: PlatformRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
