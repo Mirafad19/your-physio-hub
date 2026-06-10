@@ -11,7 +11,7 @@ export const Route = createFileRoute("/admin/users")({
 });
 
 const physios = [
-  { name: "Dr. Tunde Bakare", specialty: "MSK & Post-op", patients: 28, status: "Active" },
+  { name: "Dr. Kola Fadahunsi", specialty: "MSK & Post-op", patients: 28, status: "Active" },
   { name: "Dr. Aisha Bello", specialty: "Sports", patients: 22, status: "Active" },
   { name: "Dr. Kola Adesina", specialty: "Neuro", patients: 17, status: "Active" },
   { name: "Dr. Ngozi Umeh", specialty: "Paediatrics", patients: 14, status: "On leave" },

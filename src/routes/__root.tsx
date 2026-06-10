@@ -68,9 +68,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kinetix — Physiotherapy & Telehealth Platform" },
+      { title: "GTD Clinic — Physiotherapy & Telehealth Platform" },
       { name: "description", content: "Book appointments, join video consultations, follow exercise plans and track recovery — all in one secure clinical workspace." },
-      { property: "og:title", content: "Kinetix — Physiotherapy & Telehealth Platform" },
+      { property: "og:title", content: "GTD Clinic — Physiotherapy & Telehealth Platform" },
       { property: "og:description", content: "Book appointments, join video consultations, follow exercise plans and track recovery — all in one secure clinical workspace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

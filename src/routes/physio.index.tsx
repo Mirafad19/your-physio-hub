@@ -21,7 +21,7 @@ function PhysioDashboard() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="font-display text-3xl">Good morning, Dr. Bakare</h1>
+          <h1 className="font-display text-3xl">Good morning, Dr. Fadahunsi</h1>
           <p className="text-sm text-muted-foreground">You have {today.length} sessions today.</p>
         </div>
         <Button asChild><Link to="/physio/schedule">View schedule</Link></Button>

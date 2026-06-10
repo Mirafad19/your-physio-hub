@@ -8,8 +8,8 @@ import { Activity, UserRound, Stethoscope, ShieldCheck } from "lucide-react";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — Kinetix" },
-      { name: "description", content: "Sign in to your Kinetix portal as a patient, physiotherapist or administrator." },
+      { title: "Sign in — GTD Clinic" },
+      { name: "description", content: "Sign in to your GTD Clinic portal as a patient, physiotherapist or administrator." },
     ],
   }),
   component: LoginPage,
@@ -30,13 +30,13 @@ function LoginPage() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 backdrop-blur-sm">
             <Activity className="h-5 w-5" />
           </div>
-          <span className="font-display text-xl">Kinetix</span>
+          <span className="font-display text-xl">GTD Clinic</span>
         </Link>
         <div className="space-y-4">
           <h1 className="font-display text-4xl leading-tight">Welcome back.<br/>Your recovery, organised.</h1>
           <p className="max-w-md text-white/80">A secure clinical workspace for patients, physiotherapists and administrators across Nigeria.</p>
         </div>
-        <p className="text-xs text-white/60">© 2026 Kinetix Health</p>
+        <p className="text-xs text-white/60">© 2026 Gilead Digital Therapy Clinic</p>
       </div>
 
       {/* Right sign-in */}
@@ -46,7 +46,7 @@ function LoginPage() {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <Activity className="h-4 w-4" />
             </div>
-            <span className="font-display text-lg">Kinetix</span>
+            <span className="font-display text-lg">GTD Clinic</span>
           </div>
 
           <h2 className="font-display text-3xl tracking-tight">Sign in</h2>
