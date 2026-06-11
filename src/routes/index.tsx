@@ -65,40 +65,60 @@ function Landing() {
             </div>
           </div>
 
-          {/* Hero card */}
+          {/* Hero card — what we treat */}
           <Card className="relative overflow-hidden border-border/60 p-6 shadow-elevated">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-hero" />
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Next session</p>
-                <p className="mt-1 font-display text-xl">Follow-up consultation</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">What we treat</p>
+                <p className="mt-1 font-display text-xl">Conditions we see every week</p>
               </div>
-              <Badge className="bg-success text-success-foreground">Confirmed</Badge>
+              <Badge variant="outline" className="border-success/40 text-success">In clinic & online</Badge>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-              <div className="rounded-lg border border-border bg-muted/40 p-3">
-                <p className="text-muted-foreground">Friday</p>
-                <p className="font-display text-lg">12 Jun · 10:00</p>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 text-sm">
+              {[
+                "Lower back & sciatica",
+                "Neck & shoulder pain",
+                "Post-surgery rehab",
+                "Sports & ACL recovery",
+                "Knee & hip pain",
+                "Stroke & neuro rehab",
+              ].map((c) => (
+                <div key={c} className="flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary" />
+                  <span className="truncate">{c}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-xl border border-border bg-gradient-to-br from-primary/5 to-accent/30 p-4">
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <span className="uppercase tracking-wider">Typical recovery window</span>
+                <span className="text-success">87% report improvement</span>
               </div>
-              <div className="rounded-lg border border-border bg-muted/40 p-3">
-                <p className="text-muted-foreground">Clinician</p>
-                <p className="font-display text-lg">Dr. Kola Fadahunsi</p>
+              <div className="mt-3 flex items-end gap-1.5">
+                {[28, 42, 58, 70, 80, 88].map((h, i) => (
+                  <div key={i} className="flex-1 rounded-t-md bg-gradient-to-t from-primary/40 to-primary" style={{ height: `${h * 0.5 + 12}px` }} />
+                ))}
+              </div>
+              <div className="mt-2 flex justify-between text-[10px] uppercase tracking-wider text-muted-foreground">
+                <span>Wk 1</span><span>Wk 3</span><span>Wk 6</span>
               </div>
             </div>
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center justify-between rounded-lg border border-border p-3">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-md bg-primary/10 p-2 text-primary"><Dumbbell className="h-4 w-4" /></div>
-                  <div><p className="text-sm font-medium">Today's exercises</p><p className="text-xs text-muted-foreground">4 of 6 complete</p></div>
-                </div>
-                <span className="text-sm font-medium text-success">+12%</span>
+
+            <div className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-4 text-center">
+              <div>
+                <p className="font-display text-lg text-foreground">48h</p>
+                <p className="text-[11px] text-muted-foreground">Avg. booking lead time</p>
               </div>
-              <div className="flex items-center justify-between rounded-lg border border-border p-3">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-md bg-accent text-accent-foreground p-2"><LineChart className="h-4 w-4" /></div>
-                  <div><p className="text-sm font-medium">Pain trend</p><p className="text-xs text-muted-foreground">8 → 3 in 6 weeks</p></div>
-                </div>
-                <span className="text-sm font-medium text-primary">Improving</span>
+              <div>
+                <p className="font-display text-lg text-foreground">₦0</p>
+                <p className="text-[11px] text-muted-foreground">To create an account</p>
+              </div>
+              <div>
+                <p className="font-display text-lg text-foreground">36</p>
+                <p className="text-[11px] text-muted-foreground">States served online</p>
               </div>
             </div>
           </Card>
