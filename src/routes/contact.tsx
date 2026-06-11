@@ -11,10 +11,10 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — GTD Clinic" },
-      { name: "description", content: "Get in touch with Gilead Digital Therapy Clinic in Lagos. Phone, email or send a message." },
-      { property: "og:title", content: "Contact — GTD Clinic" },
-      { property: "og:description", content: "Reach Gilead Digital Therapy Clinic for bookings, enquiries or partnerships." },
+      { title: "Contact — GDP Clinic" },
+      { name: "description", content: "Get in touch with Gilead Digital Physiotherapy in Lagos. Phone, email or send a message." },
+      { property: "og:title", content: "Contact — GDP Clinic" },
+      { property: "og:description", content: "Reach Gilead Digital Physiotherapy for bookings, enquiries or partnerships." },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),
@@ -29,7 +29,7 @@ function Contact() {
         <div>
           <p className="text-sm font-medium text-primary">Contact</p>
           <h1 className="mt-2 font-display text-5xl tracking-tight">We'd love to hear from you.</h1>
-          <p className="mt-4 text-muted-foreground">For bookings, pricing enquiries and partnership opportunities, reach us directly or send a message — Dr. Fadahunsi's team will respond within one working day.</p>
+          <p className="mt-4 text-muted-foreground">For bookings, pricing enquiries and partnership opportunities, reach us directly or send a message — Dr. Kola Fadahunsi's team will respond within one working day.</p>
           <ul className="mt-8 space-y-4 text-sm">
             <li className="flex items-start gap-3"><Phone className="mt-0.5 h-4 w-4 text-primary" /><div><div className="font-medium">+234 800 000 0000</div><div className="text-muted-foreground">Mon–Sat, 8am–6pm WAT</div></div></li>
             <li className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 text-primary" /><div><div className="font-medium">hello@gtdclinic.ng</div><div className="text-muted-foreground">General enquiries</div></div></li>

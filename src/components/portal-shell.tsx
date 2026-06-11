@@ -41,7 +41,7 @@ export function PortalShell({ brandLabel, nav, userName, userMeta, children }: P
                 <Activity className="h-4 w-4" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-sm font-semibold text-sidebar-foreground">GTD Clinic</span>
+                <span className="text-sm font-semibold text-sidebar-foreground">GDP Clinic</span>
                 <span className="text-[10px] uppercase tracking-wider text-sidebar-foreground/60">{brandLabel}</span>
               </div>
             </Link>

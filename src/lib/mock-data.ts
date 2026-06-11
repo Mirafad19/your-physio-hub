@@ -25,7 +25,7 @@ export const currentPatient = {
 export const physiotherapist = {
   name: "Dr. Kola Fadahunsi, MPT",
   specialty: "Musculoskeletal & Post-Surgical Rehab",
-  clinic: "GTD Clinic — Lagos — Lekki Phase 1",
+  clinic: "GDP Clinic — Lagos — Lekki Phase 1",
   rating: 4.9,
   reviews: 312,
 };

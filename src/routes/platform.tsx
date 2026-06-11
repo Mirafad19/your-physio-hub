@@ -7,9 +7,9 @@ import { CalendarCheck, Video, Dumbbell, MessageSquare, LineChart, ShieldCheck, 
 export const Route = createFileRoute("/platform")({
   head: () => ({
     meta: [
-      { title: "Platform — GTD Clinic" },
-      { name: "description", content: "Everything Gilead Digital Therapy Clinic offers: booking, telehealth, exercise prescription, progress tracking, secure messaging and more." },
-      { property: "og:title", content: "Platform — GTD Clinic" },
+      { title: "Platform — GDP Clinic" },
+      { name: "description", content: "Everything Gilead Digital Physiotherapy offers: booking, telehealth, exercise prescription, progress tracking, secure messaging and more." },
+      { property: "og:title", content: "Platform — GDP Clinic" },
       { property: "og:description", content: "Telehealth, exercises, messaging and progress tracking in one secure portal." },
     ],
     links: [{ rel: "canonical", href: "/platform" }],
@@ -35,7 +35,7 @@ function PlatformPage() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <p className="text-sm font-medium text-primary">Platform</p>
         <h1 className="mt-2 font-display text-5xl tracking-tight">A full physiotherapy clinic, in your pocket.</h1>
-        <p className="mt-4 max-w-2xl text-muted-foreground">The GTD Clinic patient portal brings every part of your recovery into one secure place — booking, treatment, messaging, payments and progress.</p>
+        <p className="mt-4 max-w-2xl text-muted-foreground">The GDP Clinic patient portal brings every part of your recovery into one secure place — booking, treatment, messaging, payments and progress.</p>
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {items.map((i) => (
             <Card key={i.title} className="border-border/60 p-6 shadow-card">

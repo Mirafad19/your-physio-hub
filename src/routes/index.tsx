@@ -11,9 +11,9 @@ import { SiteHeader, SiteFooter } from "@/components/site-header";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GTD Clinic — Gilead Digital Therapy Clinic, Lagos" },
+      { title: "GDP Clinic — Gilead Digital Physiotherapy, Lagos" },
       { name: "description", content: "Expert physiotherapy in Lagos and online across Nigeria. Book a consultation with Dr. Kola Fadahunsi, follow guided exercise plans and recover faster — all in one secure portal." },
-      { property: "og:title", content: "GTD Clinic — Gilead Digital Therapy Clinic" },
+      { property: "og:title", content: "GDP Clinic — Gilead Digital Physiotherapy" },
       { property: "og:description", content: "Expert physiotherapy in Lagos and online across Nigeria." },
       { property: "og:type", content: "website" },
     ],
@@ -48,7 +48,7 @@ function Landing() {
               <span className="text-primary">not the other way around.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-              Gilead Digital Therapy Clinic combines in-person care in Lagos with secure telehealth — so your recovery never has to wait for traffic, distance or schedule.
+              Gilead Digital Physiotherapy combines in-person care in Lagos with secure telehealth — so your recovery never has to wait for traffic, distance or schedule.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full px-6">
@@ -61,7 +61,7 @@ function Landing() {
             <div className="mt-10 flex items-center gap-10 text-sm text-muted-foreground">
               <div><div className="font-display text-2xl text-foreground">1,200+</div>patients treated</div>
               <div><div className="font-display text-2xl text-foreground">4.9★</div>average rating</div>
-              <div><div className="font-display text-2xl text-foreground">10+ yrs</div>clinical experience</div>
+              <div><div className="font-display text-2xl text-foreground">20+ yrs</div>clinical experience</div>
             </div>
           </div>
 
@@ -82,7 +82,7 @@ function Landing() {
               </div>
               <div className="rounded-lg border border-border bg-muted/40 p-3">
                 <p className="text-muted-foreground">Clinician</p>
-                <p className="font-display text-lg">Dr. Fadahunsi</p>
+                <p className="font-display text-lg">Dr. Kola Fadahunsi</p>
               </div>
             </div>
             <div className="mt-6 space-y-3">
@@ -110,7 +110,7 @@ function Landing() {
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary">Everything in one portal</p>
           <h2 className="mt-2 font-display text-4xl tracking-tight">Built around the patient journey.</h2>
-          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, GTD Clinic keeps every detail organised and every party informed.</p>
+          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, GDP Clinic keeps every detail organised and every party informed.</p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
@@ -147,7 +147,7 @@ function Landing() {
           </Card>
           <div>
             <h2 className="font-display text-4xl tracking-tight">A clinician who listens, a plan that adapts.</h2>
-            <p className="mt-4 text-muted-foreground">Every patient at GTD Clinic begins with a thorough assessment — history, movement screen, and goals. From there we co-design a recovery plan that fits your life, not the other way around.</p>
+            <p className="mt-4 text-muted-foreground">Every patient at GDP Clinic begins with a thorough assessment — history, movement screen, and goals. From there we co-design a recovery plan that fits your life, not the other way around.</p>
             <ul className="mt-6 space-y-3 text-sm">
               {[
                 "Comprehensive musculoskeletal assessment",
@@ -173,7 +173,7 @@ function Landing() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             { quote: "Six weeks of back pain — gone in a month. The exercise videos kept me consistent.", who: "Adaeze O., Lagos" },
-            { quote: "Telehealth was a lifesaver during the rains. Felt like Dr. Fadahunsi was in the room with me.", who: "Emeka A., Abuja" },
+            { quote: "Telehealth was a lifesaver during the rains. Felt like Dr. Kola Fadahunsi was in the room with me.", who: "Emeka A., Abuja" },
             { quote: "Post-ACL recovery on track ahead of schedule. The progress tracking is brilliant.", who: "Fatima Y., Lagos" },
           ].map((t) => (
             <Card key={t.who} className="border-border/60 p-6 shadow-card">

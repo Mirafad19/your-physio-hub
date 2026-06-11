@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How it works — GTD Clinic" },
-      { name: "description", content: "From registration to discharge — the four-step GTD Clinic recovery journey." },
-      { property: "og:title", content: "How it works — GTD Clinic" },
-      { property: "og:description", content: "Register, book, consult and recover with Gilead Digital Therapy Clinic." },
+      { title: "How it works — GDP Clinic" },
+      { name: "description", content: "From registration to discharge — the four-step GDP Clinic recovery journey." },
+      { property: "og:title", content: "How it works — GDP Clinic" },
+      { property: "og:description", content: "Register, book, consult and recover with Gilead Digital Physiotherapy." },
     ],
     links: [{ rel: "canonical", href: "/how-it-works" }],
   }),
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/how-it-works")({
 const steps = [
   { n: "01", title: "Register", body: "Create your account and tell us about your history, symptoms and goals." },
   { n: "02", title: "Book a session", body: "Pick from initial consult, follow-up, exercise review or post-op rehab — in clinic or online." },
-  { n: "03", title: "Consult & plan", body: "Meet Dr. Fadahunsi for a full assessment. Leave with a personalised treatment plan." },
+  { n: "03", title: "Consult & plan", body: "Meet Dr. Kola Fadahunsi for a full assessment. Leave with a personalised treatment plan." },
   { n: "04", title: "Recover, supported", body: "Follow your exercises, message between sessions and track progress every week." },
 ];
 

@@ -7,9 +7,9 @@ import { Stethoscope, ClipboardList, Users, ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/clinicians")({
   head: () => ({
     meta: [
-      { title: "For clinicians — GTD Clinic" },
+      { title: "For clinicians — GDP Clinic" },
       { name: "description", content: "Tools built for physiotherapists: caseload management, telehealth, exercise prescription and reporting." },
-      { property: "og:title", content: "For clinicians — GTD Clinic" },
+      { property: "og:title", content: "For clinicians — GDP Clinic" },
       { property: "og:description", content: "Run your physiotherapy practice with modern, secure tools." },
     ],
     links: [{ rel: "canonical", href: "/clinicians" }],
@@ -24,7 +24,7 @@ function Clinicians() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <p className="text-sm font-medium text-primary">For clinicians</p>
         <h1 className="mt-2 font-display text-5xl tracking-tight">Spend more time treating, less time on admin.</h1>
-        <p className="mt-4 max-w-2xl text-muted-foreground">GTD Clinic gives physiotherapists a single workspace for caseload, scheduling, telehealth and clinical documentation.</p>
+        <p className="mt-4 max-w-2xl text-muted-foreground">GDP Clinic gives physiotherapists a single workspace for caseload, scheduling, telehealth and clinical documentation.</p>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {[
