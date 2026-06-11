@@ -15,10 +15,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-20 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logo} alt="GTD Clinic" width={32} height={32} className="h-8 w-8" />
+          <img src={logo} alt="GDP Clinic" width={32} height={32} className="h-8 w-8" />
           <div className="leading-tight">
-            <div className="font-display text-base font-semibold tracking-tight">GTD Clinic</div>
-            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Gilead Digital Therapy</div>
+            <div className="font-display text-base font-semibold tracking-tight">GDP Clinic</div>
+            <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Gilead Digital Physiotherapy</div>
           </div>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
@@ -48,7 +48,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
         <div className="flex items-center gap-2">
           <img src={logo} alt="" width={20} height={20} className="h-5 w-5" />
-          <p>© {new Date().getFullYear()} Gilead Digital Therapy Clinic, Lagos.</p>
+          <p>© {new Date().getFullYear()} Gilead Digital Physiotherapy, Lagos.</p>
         </div>
         <div className="flex gap-6">
           <Link to="/about" className="hover:text-foreground">About</Link>

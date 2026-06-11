@@ -20,7 +20,7 @@ function Settings() {
       <Card className="p-5 shadow-card">
         <h2 className="font-display text-lg">Clinic profile</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
-          <div className="space-y-1.5"><Label>Clinic name</Label><Input defaultValue="GTD Clinic — Lagos" /></div>
+          <div className="space-y-1.5"><Label>Clinic name</Label><Input defaultValue="GDP Clinic — Lagos" /></div>
           <div className="space-y-1.5"><Label>Address</Label><Input defaultValue="Lekki Phase 1, Lagos" /></div>
           <div className="space-y-1.5"><Label>Phone</Label><Input defaultValue="+234 803 555 1247" /></div>
           <div className="space-y-1.5"><Label>Currency</Label><Input defaultValue="NGN — ₦" /></div>

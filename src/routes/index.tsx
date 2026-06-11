@@ -11,9 +11,9 @@ import { SiteHeader, SiteFooter } from "@/components/site-header";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GTD Clinic — Gilead Digital Therapy Clinic, Lagos" },
+      { title: "GDP Clinic — Gilead Digital Physiotherapy, Lagos" },
       { name: "description", content: "Expert physiotherapy in Lagos and online across Nigeria. Book a consultation with Dr. Kola Fadahunsi, follow guided exercise plans and recover faster — all in one secure portal." },
-      { property: "og:title", content: "GTD Clinic — Gilead Digital Therapy Clinic" },
+      { property: "og:title", content: "GDP Clinic — Gilead Digital Physiotherapy" },
       { property: "og:description", content: "Expert physiotherapy in Lagos and online across Nigeria." },
       { property: "og:type", content: "website" },
     ],
@@ -48,7 +48,7 @@ function Landing() {
               <span className="text-primary">not the other way around.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-muted-foreground">
-              Gilead Digital Therapy Clinic combines in-person care in Lagos with secure telehealth — so your recovery never has to wait for traffic, distance or schedule.
+              Gilead Digital Physiotherapy combines in-person care in Lagos with secure telehealth — so your recovery never has to wait for traffic, distance or schedule.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full px-6">
@@ -61,44 +61,64 @@ function Landing() {
             <div className="mt-10 flex items-center gap-10 text-sm text-muted-foreground">
               <div><div className="font-display text-2xl text-foreground">1,200+</div>patients treated</div>
               <div><div className="font-display text-2xl text-foreground">4.9★</div>average rating</div>
-              <div><div className="font-display text-2xl text-foreground">10+ yrs</div>clinical experience</div>
+              <div><div className="font-display text-2xl text-foreground">20+ yrs</div>clinical experience</div>
             </div>
           </div>
 
-          {/* Hero card */}
+          {/* Hero card — what we treat */}
           <Card className="relative overflow-hidden border-border/60 p-6 shadow-elevated">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-hero" />
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Next session</p>
-                <p className="mt-1 font-display text-xl">Follow-up consultation</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground">What we treat</p>
+                <p className="mt-1 font-display text-xl">Conditions we see every week</p>
               </div>
-              <Badge className="bg-success text-success-foreground">Confirmed</Badge>
+              <Badge variant="outline" className="border-success/40 text-success">In clinic & online</Badge>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-4 text-sm">
-              <div className="rounded-lg border border-border bg-muted/40 p-3">
-                <p className="text-muted-foreground">Friday</p>
-                <p className="font-display text-lg">12 Jun · 10:00</p>
+
+            <div className="mt-5 grid grid-cols-2 gap-2 text-sm">
+              {[
+                "Lower back & sciatica",
+                "Neck & shoulder pain",
+                "Post-surgery rehab",
+                "Sports & ACL recovery",
+                "Knee & hip pain",
+                "Stroke & neuro rehab",
+              ].map((c) => (
+                <div key={c} className="flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2">
+                  <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary" />
+                  <span className="truncate">{c}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-xl border border-border bg-gradient-to-br from-primary/5 to-accent/30 p-4">
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <span className="uppercase tracking-wider">Typical recovery window</span>
+                <span className="text-success">87% report improvement</span>
               </div>
-              <div className="rounded-lg border border-border bg-muted/40 p-3">
-                <p className="text-muted-foreground">Clinician</p>
-                <p className="font-display text-lg">Dr. Fadahunsi</p>
+              <div className="mt-3 flex items-end gap-1.5">
+                {[28, 42, 58, 70, 80, 88].map((h, i) => (
+                  <div key={i} className="flex-1 rounded-t-md bg-gradient-to-t from-primary/40 to-primary" style={{ height: `${h * 0.5 + 12}px` }} />
+                ))}
+              </div>
+              <div className="mt-2 flex justify-between text-[10px] uppercase tracking-wider text-muted-foreground">
+                <span>Wk 1</span><span>Wk 3</span><span>Wk 6</span>
               </div>
             </div>
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center justify-between rounded-lg border border-border p-3">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-md bg-primary/10 p-2 text-primary"><Dumbbell className="h-4 w-4" /></div>
-                  <div><p className="text-sm font-medium">Today's exercises</p><p className="text-xs text-muted-foreground">4 of 6 complete</p></div>
-                </div>
-                <span className="text-sm font-medium text-success">+12%</span>
+
+            <div className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-4 text-center">
+              <div>
+                <p className="font-display text-lg text-foreground">48h</p>
+                <p className="text-[11px] text-muted-foreground">Avg. booking lead time</p>
               </div>
-              <div className="flex items-center justify-between rounded-lg border border-border p-3">
-                <div className="flex items-center gap-3">
-                  <div className="rounded-md bg-accent text-accent-foreground p-2"><LineChart className="h-4 w-4" /></div>
-                  <div><p className="text-sm font-medium">Pain trend</p><p className="text-xs text-muted-foreground">8 → 3 in 6 weeks</p></div>
-                </div>
-                <span className="text-sm font-medium text-primary">Improving</span>
+              <div>
+                <p className="font-display text-lg text-foreground">₦0</p>
+                <p className="text-[11px] text-muted-foreground">To create an account</p>
+              </div>
+              <div>
+                <p className="font-display text-lg text-foreground">36</p>
+                <p className="text-[11px] text-muted-foreground">States served online</p>
               </div>
             </div>
           </Card>
@@ -110,7 +130,7 @@ function Landing() {
         <div className="max-w-2xl">
           <p className="text-sm font-medium text-primary">Everything in one portal</p>
           <h2 className="mt-2 font-display text-4xl tracking-tight">Built around the patient journey.</h2>
-          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, GTD Clinic keeps every detail organised and every party informed.</p>
+          <p className="mt-3 text-muted-foreground">From the first complaint to discharge, GDP Clinic keeps every detail organised and every party informed.</p>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
@@ -147,7 +167,7 @@ function Landing() {
           </Card>
           <div>
             <h2 className="font-display text-4xl tracking-tight">A clinician who listens, a plan that adapts.</h2>
-            <p className="mt-4 text-muted-foreground">Every patient at GTD Clinic begins with a thorough assessment — history, movement screen, and goals. From there we co-design a recovery plan that fits your life, not the other way around.</p>
+            <p className="mt-4 text-muted-foreground">Every patient at GDP Clinic begins with a thorough assessment — history, movement screen, and goals. From there we co-design a recovery plan that fits your life, not the other way around.</p>
             <ul className="mt-6 space-y-3 text-sm">
               {[
                 "Comprehensive musculoskeletal assessment",
@@ -173,7 +193,7 @@ function Landing() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {[
             { quote: "Six weeks of back pain — gone in a month. The exercise videos kept me consistent.", who: "Adaeze O., Lagos" },
-            { quote: "Telehealth was a lifesaver during the rains. Felt like Dr. Fadahunsi was in the room with me.", who: "Emeka A., Abuja" },
+            { quote: "Telehealth was a lifesaver during the rains. Felt like Dr. Kola Fadahunsi was in the room with me.", who: "Emeka A., Abuja" },
             { quote: "Post-ACL recovery on track ahead of schedule. The progress tracking is brilliant.", who: "Fatima Y., Lagos" },
           ].map((t) => (
             <Card key={t.who} className="border-border/60 p-6 shadow-card">
